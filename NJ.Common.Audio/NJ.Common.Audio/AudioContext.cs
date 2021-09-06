@@ -71,6 +71,9 @@
             //-- Stop recording. --//
             _capture.Stop();
 
+            //-- Indicate that no recording is taking place. --//
+            _recording = false;
+            
             //-- Disposes the WaveWriter and writes down the wave header. --//
             _waveWriter.Dispose();
         }
@@ -91,7 +94,7 @@
             //-- Initializes WasapiCapture and prepares all resources for recording. Note that  properties like Device, etc. won't affect WasapiCapture after calling Initialize. --//
             _capture.Initialize();
 
-            //-- Indicate that  --//
+            //-- Indicate that recording has begun. --//
             _recording = true;
 
             //-- Initializes a new instance of the WaveWriter class. --//
