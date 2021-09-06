@@ -101,6 +101,8 @@
 
             //-- Provides implementation for this.Dispose() --//
             _videoRecorder.Dispose();
+            
+            _recording = false;
         }
 
         #endregion
