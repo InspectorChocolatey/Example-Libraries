@@ -1,1 +1,1 @@
-# Example-Libraries
+# Requires CSCore nuget package 
