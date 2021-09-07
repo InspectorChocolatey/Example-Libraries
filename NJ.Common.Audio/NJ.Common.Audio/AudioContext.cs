@@ -26,7 +26,7 @@
         #region Constructor
 
         /// <summary>
-        /// <para></para>
+        /// <para>This is initialized automatically by the CLR before Main(string[] args)</para>
         /// </summary>
         static AudioContext()
         {
@@ -39,14 +39,14 @@
 
         /// <summary>
         /// <para>Captures audio data from a audio device (through Wasapi Apis). To capture audio</para>
-        /// <para>from an output device, use the WasapiLoopbackCapture class. Minimum</para>
-        /// <para>supported OS: Windows Vista (see CSCore.SoundIn.WasapiCapture.IsSupportedOnCurrentPlatform</para>
+        /// <para>from an output device, use the WasapiLoopbackCapture class. Minimum supported OS: Windows Vista </para>
+        /// <para>(see CSCore.SoundIn.WasapiCapture.IsSupportedOnCurrentPlatform</para>
         /// <para>property).</para>
         /// </summary>
         private static WasapiCapture _capture;
 
         /// <summary>
-        /// <para>Encoder for wav files.</para>
+        /// <para>An Encoder for wav files.</para>
         /// </summary>
         private static WaveWriter _waveWriter;
 
@@ -100,10 +100,10 @@
             //-- Initializes a new instance of the WaveWriter class. --//
             _waveWriter = new WaveWriter(filepath, _capture.WaveFormat);
 
-            //-- setup an eventhandler to receive the recorded data --//
+            //-- Setup an eventhandler to receive the recorded data. --//
             _capture.DataAvailable += (s, e) =>
             {
-                //--save the recorded audio--//
+                //-- Save the recorded audio. --//
                 _waveWriter.Write(e.Data, e.Offset, e.ByteCount);
             };
 
