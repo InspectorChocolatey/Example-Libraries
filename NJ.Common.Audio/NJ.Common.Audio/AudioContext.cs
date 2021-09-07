@@ -66,7 +66,7 @@
         public static void StopRecording()
         {
             //-- Initializes a new instance of the InvalidOperationException class. --//
-            if (!_recording) throw new InvalidOperationException("please call StopRecording before calling this method.");
+            if (!_recording) throw new InvalidOperationException("please call StartRecording(string filepath) before calling this method.");
 
             //-- Stop recording. --//
             _capture.Stop();
