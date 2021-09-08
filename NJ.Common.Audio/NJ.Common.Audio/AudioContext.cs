@@ -51,7 +51,7 @@
         private static WaveWriter _waveWriter;
 
         /// <summary>
-        /// <para>A value indicating if StartRecording has been called.</para>
+        /// <para>A value indicating if recording is happening at this time.</para>
         /// </summary>
         private static bool _recording;
 
@@ -94,7 +94,7 @@
             //-- Initializes WasapiCapture and prepares all resources for recording. Note that  properties like Device, etc. won't affect WasapiCapture after calling Initialize. --//
             _capture.Initialize();
 
-            //-- Indicate that recording has begun. --//
+            //-- Indicate that recording is taking place at this time. --//
             _recording = true;
 
             //-- Initializes a new instance of the WaveWriter class. --//
