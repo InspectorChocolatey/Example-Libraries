@@ -86,7 +86,7 @@
             //-- Provides functionality for recording my screen! --//
             _videoRecorder = new VideoRecorder(_recorderParams);
 
-            //-- A value indicating that RecordWindowsVideo(string filepath) has been called. --//
+            //-- Indicate that recording is happening. --// 
             _recording = true;
         }
 
@@ -102,11 +102,10 @@
             //-- Provides implementation for this.Dispose() --//
             _videoRecorder.Dispose();
             
+            //-- Indicate that recording is not happening any more. --// 
             _recording = false;
         }
 
         #endregion
-
-
     }
 }
