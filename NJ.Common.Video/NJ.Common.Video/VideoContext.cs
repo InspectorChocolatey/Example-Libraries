@@ -32,6 +32,7 @@
         /// </summary>
         static VideoContext()
         {
+            //-- Indicate that no recording is taking place at this time. --//
             _recording = false;
         }
 
@@ -50,7 +51,7 @@
         private static VideoRecorder _videoRecorder;
 
         /// <summary>
-        /// <para>A value indicating if RecordWindowsVideo(string filepath) has been called.</para>
+        /// <para>A value indicating if recording is happening at this time.</para>
         /// </summary>
         private static bool _recording;
 
@@ -86,7 +87,7 @@
             //-- Provides functionality for recording my screen! --//
             _videoRecorder = new VideoRecorder(_recorderParams);
 
-            //-- Indicate that recording is happening. --// 
+            //-- Indicate that recording is happening at this time. --//
             _recording = true;
         }
 
@@ -102,7 +103,7 @@
             //-- Provides implementation for this.Dispose() --//
             _videoRecorder.Dispose();
             
-            //-- Indicate that recording is not happening any more. --// 
+            //-- Indicate that recording is not happening at this time. --//
             _recording = false;
         }
 
